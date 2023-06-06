@@ -7,8 +7,8 @@ const btnSize = document.createElement('button');
 const buttonContainer = document.querySelector('.buttons');
 
 
-// Append buttons, 
 
+// Functions needed to create the game
 createDivs(16, 16);
 blackColor()
 greyColor()
@@ -19,7 +19,7 @@ resize()
 function createDivs(col, rows) {
     for (let i = 0; i < (col * rows); i++) {
         const div = document.createElement('div');
-        div.style.border = '1px solid pink';
+        // div.style.border = '1px solid pink';
         container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         container.appendChild(div).classList.add('box');
@@ -105,3 +105,25 @@ function resize() {
     buttonContainer.appendChild(btnSize).classList.add('btn');
 }
 
+// Function for background animations
+function bgAnim(){
+    colors = ['red', 'blue', 'yellow', 'green'];
+    const section = document.querySelector('.section');
+    const span = decument.createElement('span');
+
+    let size = Math.random() * 50;
+    span.style.width = size + 10 + 'px';
+    span.style.height = size + 10 + 'px';
+
+    span.style.borderRadius = `${size}%`;
+    span.style.top = Math.random() * innerHeight + 'px';
+    span.style.left = Math.random() * innerWidth + 'px';
+
+    const backgroundColor = colors[Math.floor(Math.random()) * colors.length];
+    span.style.backgroundColor = backgroundColor;
+    section.appendChild(span);
+
+    setTimeout(() => {span.remove()}, 5000);
+}
+
+setInterval(bgAnim, 500);
