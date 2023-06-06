@@ -6,7 +6,15 @@ const btnErase = document.createElement('button');
 const btnSize = document.createElement('button');
 const buttonContainer = document.querySelector('.buttons');
 
+
 // Append buttons, 
+
+createDivs(16, 16);
+blackColor()
+greyColor()
+rgbColor()
+eraseColor()
+resize()
 
 function createDivs(col, rows) {
     for (let i = 0; i < (col * rows); i++) {
@@ -17,7 +25,6 @@ function createDivs(col, rows) {
         container.appendChild(div).classList.add('box');
     }
 }
-createDivs(16, 16);
 
 function blackColor() {
     const boxes = container.querySelectorAll('.box');
@@ -29,7 +36,6 @@ function blackColor() {
     })
     buttonContainer.appendChild(btnBlack).classList.add('btn');
 } 
-blackColor()
 
 function greyColor() {
     const boxes = container.querySelectorAll('.box');
@@ -42,7 +48,6 @@ function greyColor() {
     })
     buttonContainer.appendChild(btnGrey).classList.add('btn');
 } 
-greyColor()
 
 function rgbColor() {
     const boxes = container.querySelectorAll('.box');
@@ -56,10 +61,9 @@ function rgbColor() {
         }))
     })
     buttonContainer.appendChild(btnRGB).classList.add('btn');
-} 
-rgbColor()
+}
 
-function removeColor() {
+function eraseColor() {
     const boxes = container.querySelectorAll('.box');
     btnErase.textContent = 'Erase';
     btnErase.addEventListener('click', () => {
@@ -69,4 +73,35 @@ function removeColor() {
     })
     buttonContainer.appendChild(btnErase).classList.add('btn');
 } 
-removeColor()
+
+function resetBoxes() {
+    const boxes = container.querySelectorAll('.box');
+    boxes.forEach(box => box.remove());
+}
+
+function resize() {
+    btnSize.textContent = 'Grid Size';
+    btnSize.addEventListener('click', () => {
+        let user = prompt('pick square grid size');
+        if (user === null || user < 1) {
+            resetBoxes()
+            createDivs(16, 16)
+            blackColor()
+            greyColor()
+            rgbColor()
+            eraseColor()
+            resize()
+        } 
+        else {
+            resetBoxes()
+            createDivs(user, user)
+            blackColor()
+            greyColor()
+            rgbColor()
+            eraseColor()
+            resize()
+        }
+    })
+    buttonContainer.appendChild(btnSize).classList.add('btn');
+}
+
