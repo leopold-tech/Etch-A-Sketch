@@ -87,6 +87,7 @@ function resetBoard(){
         rgbColor()
         eraseColor()
         gridSize()
+        buttonContainer.appendChild(btnReset).classList.add('btn');
     })
     buttonContainer.appendChild(btnReset).classList.add('btn');
 }
@@ -110,6 +111,7 @@ function gridSize() {
             eraseColor()
             gridSize()
             resetBoard()
+            buttonContainer.appendChild(btnSize).classList.add('btn');
         } 
         else {
             resetBoxes()
@@ -120,6 +122,7 @@ function gridSize() {
             eraseColor()
             gridSize()
             resetBoard()
+            buttonContainer.appendChild(btnSize).classList.add('btn');
         }
     })
     buttonContainer.appendChild(btnSize).classList.add('btn');
