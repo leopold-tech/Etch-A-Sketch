@@ -100,9 +100,10 @@ function resetBoxes() {
 // Resize grid of board
 function gridSize() {
     btnSize.textContent = 'Grid Size';
+    buttonContainer.appendChild(btnSize).classList.add('btn');
     btnSize.addEventListener('click', () => {
-        let user = prompt('pick square grid size');
-        if (user === null || user < 1) {
+        let user = prompt('Pick square grid size: ');
+        if (user === null || user <= 1) {
             resetBoxes()
             createDivs(16, 16)
             blackColor()
@@ -111,7 +112,6 @@ function gridSize() {
             eraseColor()
             gridSize()
             resetBoard()
-            buttonContainer.appendChild(btnSize).classList.add('btn');
         } 
         else {
             resetBoxes()
@@ -122,10 +122,8 @@ function gridSize() {
             eraseColor()
             gridSize()
             resetBoard()
-            buttonContainer.appendChild(btnSize).classList.add('btn');
         }
     })
-    buttonContainer.appendChild(btnSize).classList.add('btn');
 }
 
 // Function for background animations
