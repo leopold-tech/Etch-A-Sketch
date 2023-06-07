@@ -6,7 +6,7 @@ const btnErase = document.createElement('button');
 const btnSize = document.createElement('button');
 const buttonContainer = document.querySelector('.buttons');
 
-
+// Add reset board button
 
 // Functions needed to create the game
 createDivs(16, 16);
@@ -107,23 +107,23 @@ function resize() {
 
 // Function for background animations
 function bgAnim(){
-    colors = ['red', 'blue', 'yellow', 'green'];
+    let colors = ['red', 'blue', 'yellow', 'green', 'pink'];
     const section = document.querySelector('.section');
-    const span = decument.createElement('span');
+    const span = document.createElement('span');
 
-    let size = Math.random() * 50;
+    let size = Math.random() * 30;
     span.style.width = size + 10 + 'px';
     span.style.height = size + 10 + 'px';
 
-    span.style.borderRadius = `${size}%`;
+    span.style.borderRadius = `${size}em`;
     span.style.top = Math.random() * innerHeight + 'px';
     span.style.left = Math.random() * innerWidth + 'px';
 
-    const backgroundColor = colors[Math.floor(Math.random()) * colors.length];
+    const backgroundColor = colors[Math.floor(Math.random() * colors.length)];
     span.style.backgroundColor = backgroundColor;
     section.appendChild(span);
 
-    setTimeout(() => {span.remove()}, 5000);
+    setTimeout(() => {span.remove()}, 3000);
 }
 
-setInterval(bgAnim, 500);
+setInterval(bgAnim, 200);

@@ -5,6 +5,11 @@
     background-color: rgb(214, 248, 241);
 } */
 
+body {
+    background-color: rgb(240, 255, 240);
+    overflow: hidden;
+}
+
 .section {
     display: flex;
     justify-content: center;
@@ -28,7 +33,35 @@
     height: 600px;
     z-index: 100;
     display: grid;
+    background-color: rgb(240, 255, 240);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-    border: 1px solid black;
-    box-shadow: 5px 5px 5px 10px rgba(rgb(0, 0, 0));
+span {
+    position: absolute;
+    animation: animate 5s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0%) rotate(0deg) scale(0);
+        opacity: 0;
+        transition: 0.15s ease;
+    }
+    30% {
+        opacity: 0.6;
+        filter: hue-rotate(100deg);
+        transition: 0.15s ease;
+    }
+    80% {
+        opacity: 1;
+        transition: 0.15s ease;
+    }
+    100% {
+        transform: translateY(-400%) rotate(360deg) scale(1);
+        filter: hue-rotate(360deg);
+        opacity: 0;
+        transition: 0.15s ease;
+    }
 }
