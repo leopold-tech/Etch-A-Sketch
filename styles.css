@@ -26,6 +26,12 @@ body {
     left: 50%;
     transform: translate(-50%);
     font-size: 4em;
+    
+    /* color:rgb(255, 255, 255);
+    background-color: rgb(122, 122, 122);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px; */
 }
 
 .container {
@@ -65,4 +71,33 @@ span {
         opacity: 0;
         transition: 0.15s ease;
     }
+}
+
+.buttons {
+    width: 600px;
+    height: auto;
+    text-align: center;
+}
+
+.btn {
+    margin: 20px 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(122, 122, 122);
+    transition: 0.15s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.15s ease;
+}
+
+.btn:active {
+    cursor: pointer;
+    background-color: rgb(61, 61, 61);
+    transition: 0.15s ease;
 }
