@@ -22,7 +22,7 @@ body {
 
 .section h1 {
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50%;
     transform: translate(-50%);
     font-size: 4em;
@@ -78,18 +78,28 @@ span {
     /* position: absolute; */
     width: 600px;
     height: auto;
+    margin: 10px auto;
     text-align: center;
 }
 
 .btn {
     margin: 20px 12px;
-    padding: 12px 20px;
-    border: none;
+    padding: 18px 28px;
+    z-index: 100;
+    border: 2px solid black;
     border-radius: 10px;
     font-size: 20px;
-    color:rgb(255, 255, 255);
-    background-color: rgb(122, 122, 122);
+    /* color:rgb(255, 255, 255);
+    background-color: rgb(122, 122, 122); */
     transition: 0.15s ease;
+
+    /* padding: 1em 3em; */
+    background-color: rgb(240, 255, 240);
+    color: black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), inset -5px -5px 10px rgba(255, 255, 255, 0.25);
+    outline: none;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .btn:hover {
