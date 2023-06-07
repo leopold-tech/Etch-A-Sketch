@@ -4,9 +4,9 @@ const btnGrey = document.createElement('button');
 const btnRGB = document.createElement('button');
 const btnErase = document.createElement('button');
 const btnSize = document.createElement('button');
+const btnReset = document.createElement('button');
 const buttonContainer = document.querySelector('.buttons');
 
-// Add reset board button
 
 // Functions needed to create the game
 createDivs(16, 16);
@@ -14,7 +14,8 @@ blackColor()
 greyColor()
 rgbColor()
 eraseColor()
-resize()
+gridSize()
+resetBoard()
 
 function createDivs(col, rows) {
     for (let i = 0; i < (col * rows); i++) {
@@ -74,12 +75,29 @@ function eraseColor() {
     buttonContainer.appendChild(btnErase).classList.add('btn');
 } 
 
+// Reset board button
+function resetBoard(){
+    const boxes = container.querySelectorAll('.box');
+    btnReset.textContent = 'Reset Board';
+    btnReset.addEventListener('click', () => {
+        resetBoxes()
+        createDivs(16, 16)
+        blackColor()
+        greyColor()
+        rgbColor()
+        eraseColor()
+        gridSize()
+    })
+    buttonContainer.appendChild(btnReset).classList.add('btn');
+}
+
 function resetBoxes() {
     const boxes = container.querySelectorAll('.box');
     boxes.forEach(box => box.remove());
 }
 
-function resize() {
+// Resize grid of board
+function gridSize() {
     btnSize.textContent = 'Grid Size';
     btnSize.addEventListener('click', () => {
         let user = prompt('pick square grid size');
@@ -90,7 +108,8 @@ function resize() {
             greyColor()
             rgbColor()
             eraseColor()
-            resize()
+            gridSize()
+            resetBoard()
         } 
         else {
             resetBoxes()
@@ -99,7 +118,8 @@ function resize() {
             greyColor()
             rgbColor()
             eraseColor()
-            resize()
+            gridSize()
+            resetBoard()
         }
     })
     buttonContainer.appendChild(btnSize).classList.add('btn');
